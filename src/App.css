@@ -1,0 +1,162 @@
+/* Fondo general */
+body {
+  background: linear-gradient(135deg, #6e7bff, #a7c5ff);
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Deshabilitar el desplazamiento */
+}
+
+/* Contenedor principal */
+.lista-pedidos {
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Ajuste del tamaño */
+  max-width: 700px; /* Ajuste del tamaño */
+  margin: 20px;
+  height: 80vh; /* Limitar la altura */
+  overflow-y: auto; /* Habilitar el scroll solo dentro del contenedor */
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8em; /* Ajuste de tamaño */
+  margin-bottom: 20px;
+  word-wrap: break-word; /* Evitar que el texto se salga de la pantalla */
+}
+
+/* Estilo de la tarjeta de pedido */
+.pedido-card {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px; /* Ajuste del margen */
+  background-color: #f9f9f9;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s, box-shadow 0.3s;
+  color: #000;
+}
+
+/* Estilo cuando el pedido está enviado */
+.pedido-card.enviado {
+  border: 2px solid #4caf50;
+  box-shadow: 0 0 10px #4caf50;
+}
+
+/* Detalles del pedido */
+.pedido-detalles {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+/* Estilo del título de la tabla */
+h4 {
+  margin-bottom: 10px;
+  font-size: 1.1em; /* Ajuste de tamaño */
+  color: #4caf50;
+}
+
+/* Estilo de la tabla */
+.productos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Estilo de las celdas de la tabla */
+.productos-tabla th, .productos-tabla td {
+  border: 1px solid #ddd;
+  padding: 8px; /* Ajuste de padding */
+  text-align: center;
+  font-size: 0.9em;
+}
+
+/* Estilo para los encabezados de la tabla */
+.productos-tabla th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+}
+
+/* Estilo para las entradas de cantidad */
+.input-cantidad {
+  width: 60px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  margin-top: 5px;
+  text-align: center;
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+/* Botón de enviar pedido */
+.boton-enviar {
+  margin-top: 12px;
+  padding: 8px 15px; /* Ajuste de tamaño */
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  font-size: 1em; /* Ajuste de tamaño */
+}
+
+/* Cambio de color del botón al pasar el ratón */
+.boton-enviar:hover {
+  background-color: #43a047;
+}
+
+/* Estilo de hover para las tarjetas de pedidos */
+.pedido-card:hover {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid #4caf50;
+}
+
+.pedido-card.recibido {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.boton-ver-recibidos {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.boton-ver-recibidos:hover {
+  background-color: #45a049;
+}
+
+.boton-cambiar {
+  text-align: center; /* Centrar el botón */
+  margin-bottom: 20px; /* Espacio entre el botón y la lista */
+}
+
+/* Contenedor del logo */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 100px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+}
