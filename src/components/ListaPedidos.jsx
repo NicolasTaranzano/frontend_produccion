@@ -12,7 +12,7 @@ const ListaPedidos = () => {
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/pedidos');
+        const response = await axios.get('https://backendfabrica-production.up.railway.app/pedidos');
 
         // Filtrar los pedidos según si estamos viendo los "enviado/pendiente" o los "recibidos"
         const pedidosFiltrados = response.data.filter(pedido => {
@@ -54,7 +54,7 @@ const ListaPedidos = () => {
         cantidadenviada: cantidades[p.id] || 0
       }));
 
-      await axios.put(`http://localhost:3000/pedidos/${pedidoId}/enviar`, {
+      await axios.put(`https://backendfabrica-production.up.railway.app/pedidos/${pedidoId}/enviar`, {
         productos: datos
       });
 
