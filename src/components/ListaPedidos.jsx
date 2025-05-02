@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../App.css'; // Importar los estilos
 import logo from '../assets/logoFCA.png'; // Importar el logo
-
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 const ListaPedidos = () => {
   const [pedidos, setPedidos] = useState([]); // Pedidos generales
   const [pedidoSeleccionado, setPedidoSeleccionado] = useState(null);
   const [cantidades, setCantidades] = useState({});
   const [verRecibidos, setVerRecibidos] = useState(false); // Estado para cambiar entre mostrar "enviado/pendiente" o "recibido"
 
+
   useEffect(() => {
     const fetchPedidos = async () => {
       try {
-        const response = await axios.get('https://backendfabrica-production.up.railway.app/pedidos');
+        const response = await axios.get(`${backendURL}/pedidos`);
 
         // Filtrar los pedidos según si estamos viendo los "enviado/pendiente" o los "recibidos"
         const pedidosFiltrados = response.data.filter(pedido => {
@@ -54,7 +55,7 @@ const ListaPedidos = () => {
         cantidadenviada: cantidades[p.id] || 0
       }));
 
-      await axios.put(`https://backendfabrica-production.up.railway.app/pedidos/${pedidoId}/enviar`, {
+      await axios.put(`${backendURL}/pedidos/${pedidoId}/enviar`, {
         productos: datos
       });
 
