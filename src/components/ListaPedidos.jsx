@@ -26,7 +26,7 @@ const ListaPedidos = () => {
         // Ordenar los pedidos por fecha (últimos primero) y limitar a los 5 más recientes
         const pedidosRecientes = pedidosFiltrados
           .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
-          .slice(0, 5);
+          .slice(0, 15);
 
         setPedidos(pedidosRecientes);
       } catch (error) {
